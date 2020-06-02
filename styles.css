@@ -1,0 +1,179 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: initial;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+}
+
+#root {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: linear-gradient(to bottom right, #0575e6, #021b79);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.chart {
+  display: grid;
+  grid-template-columns: 5rem 1fr;
+  grid-template-rows: 1fr 5rem;
+  max-width: 60rem;
+  min-width: 40rem;
+  max-height: 50rem;
+  border-radius: 0.5rem;
+  background-color: ivory;
+  box-shadow: 0rem 0.2rem 0.8rem rgba(0, 0, 0, 0.644);
+
+  overflow-x: scroll;
+}
+
+.chart::-webkit-scrollbar {
+  height: 1rem;
+  background-color: #4d76ff;
+}
+.chart::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom, #0575e6, #021b79);
+  border-radius: 0.1rem;
+}
+.chart::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px var(--cl-scroll-shadow);
+  box-shadow: inset 0 0 6px var(--cl-scroll-shadow);
+}
+
+.chart__yBlock {
+  grid-column: 1 / 2;
+  grid-row: 1 / 3;
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr 5rem;
+  grid-template-columns: 1fr min-content;
+}
+.chart__yBlock::after {
+  grid-column: 2 / 3;
+  grid-row: 1 / -1;
+  content: "";
+  display: inline-block;
+  background-color: #032686;
+  height: 100%;
+  width: 0.2rem;
+}
+/**
+* VALUES - work values within this block
+*/
+.chart__yBlock--values {
+  grid-column: 1 / 2;
+  display: grid;
+}
+.chart__yBlock--value {
+  text-align: center;
+}
+.chart__yBlock--value:nth-child(1) {
+  margin-top: 1rem;
+}
+/* *********************************** */
+.chart__yBlock--axis {
+  position: absolute;
+  bottom: 2rem;
+  left: 0.8rem;
+}
+
+.chart__xBlock {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  position: relative;
+  display: grid;
+  /* grid-auto-rows: min-content; */
+  grid-template-columns: 5rem 1fr;
+  grid-template-rows: min-content 1fr;
+}
+.chart__xBlock::before {
+  grid-column: 1 / -1;
+  content: "";
+  display: inline-block;
+  background-color: #032686;
+  height: 0.2rem;
+  width: 100%;
+}
+/**
+* INDECIES - work indecies within this block
+*/
+.chart__xBlock--indecies {
+  grid-column: 2 / 3;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min-content;
+  align-items: center;
+}
+
+.chart__xBlock--index {
+  /* padding: 0 0.4rem; */
+  text-align: center;
+  width: 2.5rem;
+}
+/* *************************************** */
+.chart__xBlock--axis {
+  position: absolute;
+  bottom: 0.2rem;
+  left: 3rem;
+}
+
+/**
+* CHART BARS - work bars within this block
+*/
+.chart__mainBlock {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: min-content;
+}
+.chart__mainBlock--bar:nth-child(1) {
+  /* padding: 0 0.4rem; */
+  width: 2.5rem;
+}
+.chart__mainBlock--bar {
+  /* padding: 0 0.4rem; */
+  text-align: center;
+  display: grid;
+  height: 40rem;
+  /* Chart bar depends on highest and smaller fr values
+  * (higher value in chart)fr (recieved value from collection)fr
+  */
+  /* grid-template-rows: 1fr 5fr; */
+}
+
+.chart__mainBlock--bar-val {
+  display: grid;
+  align-items: end;
+  /* padding: 0 0.4rem; */
+  width: 2.5rem;
+}
+
+.chart__mainBlock--bar-height {
+  /* background-color: lightcoral; */
+  border-left: #333 solid 0.2rem;
+  border-top: #333 solid 0.2rem;
+  /* border-right: #333 solid 0.2rem; */
+}
+/* *************************************** */
+
+.colors {
+  color: #db4141;
+  color: #e7f33c;
+  color: #41db62;
+}
