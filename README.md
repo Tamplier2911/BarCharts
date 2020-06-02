@@ -4,22 +4,12 @@ Simple bars chart using JS, CSS and HTML.
 
 ## Overview
 
-- Components
+- Components - contains element initialization classes.
+- Mock - just an image of the mock I made before start work.
+- fillChartWithData.js - main bulk of logic contains in the initialization function, which then being called in index.js
+- initialData.js - contains data from test review, plus an addition function that dynamically creates array of configurable length and values range.
+- index.html, styles.css, index.js - just as it is.
 
-* Contains element initialization methods.
+## Preview
 
-- Mock
-
-* Just an image of the mock I made before started work.
-
-- fillChartWithData.js
-
-* Main bulk of logic contains in the initialization function, which then being called in index.js
-
-- initialData.js
-
-* Contains data from tast review, plus an additation function that dynamically creates array of configurable length and values range.
-
-- index.html, styles.css, index.js
-
-* Just as it is.
+![image](https://img.techpowerup.org/200602/chartxdsedk23.jpg)
